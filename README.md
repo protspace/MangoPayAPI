@@ -1,5 +1,5 @@
 # MangoPayAPI
-An API for MangoPay (https://www.mangopay.com/) written on Objective-C
+An API for MangoPay (https://www.mangopay.com/) written in Objective-C
 
 depends on libraries:
 https://github.com/atebits/OAuthCore
