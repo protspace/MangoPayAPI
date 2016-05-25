@@ -15,8 +15,6 @@ typedef void (^RequestCompletionBlock)(id response, NSError *error);
 
 + (instancetype) instance;
 
-
-
 //Universal methods
 -(void)getDataFromPath:(NSString *)path withParamData:(NSDictionary *)dictParam withBlock:(RequestCompletionBlock)block;
 -(void)postDataToPath:(NSString *)path withParamData:(NSDictionary *)dictParam withBlock:(RequestCompletionBlock)block;
@@ -25,9 +23,6 @@ typedef void (^RequestCompletionBlock)(id response, NSError *error);
 //Credit Card Methods
 -(void)sendCardDetailsToPath:(NSString *)path withParamData:(NSDictionary *)dictParam withBlock:(RequestCompletionBlock)block;
 -(void)editCardRegistrationObjectWithPath:(NSString *)path withParamData:(NSDictionary *)dictParam withBlock:(RequestCompletionBlock)block;
-
-
-
 
 //Utils
 - (int) getFeeAmountFromDebitedAmount: (int) debitedAmount; 

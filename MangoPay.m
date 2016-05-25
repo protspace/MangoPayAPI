@@ -11,17 +11,13 @@
 
 @implementation MangoPay
 
-
-
-
-
 - (void) createMangoPaymentFromAuthorId:(NSString *)authorId fromCardId:(NSString *)cardId toCreditedUserId:(NSString *)creditedUserId creditedWalletId:(NSString *)creditedWalletId debitedAmout:(NSNumber *)debitedAmout fee:(NSNumber *)feeAmount  withComplitionBlock:(RequestCompletionBlock)block {
     
     NSDictionary *dictParam = @{
                                 @"Tag": @"testTag",
                                 @"AuthorId": authorId,
-                                @"CreditedUserId": creditedUserId, //admin user
-                                @"CreditedWalletId":creditedWalletId, //admin EUR wallet
+                                @"CreditedUserId": creditedUserId,
+                                @"CreditedWalletId":creditedWalletId,
                                 @"DebitedFunds": @{@"Currency": @"EUR",
                                                    @"Amount": debitedAmout},
                                 @"Fees": @{@"Currency": @"EUR",
@@ -42,9 +38,7 @@
 - (void) createMangoPaymentFromAuthorId:(NSString *)authorId fromDebitedWalletId:(NSString *)debitedWalletId toCreditedUserId:(NSString *)creditedUserId creditedWalletId:(NSString *)creditedWalletId debitedAmout:(NSNumber *)debitedAmout fee:(NSNumber *)feeAmount  withComplitionBlock:(RequestCompletionBlock)block {
     
     NSDictionary *dictParam = @{
-                                //@"Tag": @"testTag",
                                 @"AuthorId": authorId,
-                              //  @"CreditedUserId": creditedUserId,
                                 @"DebitedWalletID":debitedWalletId,
                                 @"CreditedWalletId":creditedWalletId,
                                 @"DebitedFunds": @{@"Currency": @"EUR",

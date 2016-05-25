@@ -90,7 +90,6 @@ NSDictionary *dictParam = @{
     [[MangoAPI instance] editCardRegistrationObjectWithPath:url  withParamData:dictParam withBlock:^(id response, NSError *error) {
         if (!error) {
             NSString *str = [[NSString alloc] initWithData:response encoding:NSUTF8StringEncoding];
-            //NSLog(@"response data: %@",str);
             NSData *data = [str dataUsingEncoding:NSUTF8StringEncoding];
             id json = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
             NSLog(@"json = %@",json);

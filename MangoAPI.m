@@ -7,7 +7,6 @@
 //
 
 #import "MangoAPI.h"
-//#import <AFOAuth2Manager/AFOAuth2Manager.h>
 #import "OAuthCore.h"
 
 @interface MangoAPI ()
@@ -15,7 +14,6 @@
 @property (atomic) NSString *userSessionToken;
 @property (atomic) double   sessionExpires;
 @property (nonatomic, strong) NSTimer *sessionTimer;
-//@property (nonatomic, copy) RequestCompletionBlock block;
 @end
 
 @implementation MangoAPI
@@ -137,16 +135,12 @@
             NSLog(@"dictparam =  %@",dictParam);
 
             [self POST:url parameters:dictParam success:^(AFHTTPRequestOperation *operation, id responseObject) {
-                //NSLog(@"responseObject = %@",responseObject);
                 block(responseObject,nil);
             } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-               // NSLog(@"Failed: Status Code: %ld", (long)operation.response.statusCode);
-                
                 NSLog(@"error = %@",error);
                 NSLog(@"error = %@",error.localizedDescription);
                 block(nil,error);
             }];
-            
             
         } else if (error) {
             
@@ -174,8 +168,6 @@
                 NSLog(@"responseObject = %@",responseObject);
                 block(responseObject,nil);
             } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-                // NSLog(@"Failed: Status Code: %ld", (long)operation.response.statusCode);
-                
                 NSLog(@"error = %@",error.localizedDescription);
                 block(nil,error);
             }];
@@ -207,8 +199,6 @@
                 NSLog(@"responseObject = %@",responseObject);
                 block(responseObject,nil);
             } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-                // NSLog(@"Failed: Status Code: %ld", (long)operation.response.statusCode);
-                
                 NSLog(@"error = %@",error.localizedDescription);
                 block(nil,error);
             }];
@@ -240,8 +230,6 @@
                 NSLog(@"responseObject2 = %@",responseObject);
                 block(responseObject,nil);
             } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-                // NSLog(@"Failed: Status Code: %ld", (long)operation.response.statusCode);
-                
                 NSLog(@"error = %@",error.localizedDescription);
                 block(nil,error);
             }];
@@ -270,8 +258,6 @@
                 NSLog(@"responseObject 3 = %@",responseObject);
                 block(responseObject,nil);
             } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-                // NSLog(@"Failed: Status Code: %ld", (long)operation.response.statusCode);
-                
                 NSLog(@"error3= %@",error.localizedDescription);
                 block(nil,error);
             }];
@@ -285,9 +271,6 @@
     
     
 }
-
-
-
 
 
 
